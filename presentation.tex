@@ -1,0 +1,268 @@
+\documentclass{bidipresentation}
+\pagestyle{pres}
+\usepackage{color}
+\usepackage{graphicx}
+
+\definecolor{backgroundcolor}{rgb}{.5,0,0}
+\definecolor{backgroundcolor1}{rgb}{0,0.5,0}
+\definecolor{backgroundcolor2}{rgb}{0,0,0.5}
+\definecolor{backgroundcolor3}{rgb}{.5,.5,0}
+\definecolor{backgroundcolor4}{rgb}{.5,0,0.5}
+\definecolor{backgroundcolor5}{rgb}{0,0.5,0.5}
+\definecolor{textcolor}{rgb}{1,1,1}
+\definecolor{headcolor}{rgb}{1,1,0}
+\pagecolor{backgroundcolor}
+\color{textcolor}
+\usepackage{xepersian}
+\settextfont{Neirizi}
+\makeatletter
+\def\item{%
+  \@inmatherr\item
+  \@ifnextchar [\@item{\@noitemargtrue \@item[\textcolor{headcolor}{\@itemlabel}]}}
+\makeatother
+\begin{document}
+
+%\begin{figure}[h]
+%\centering 
+%\includegraphics[width=10mm]{procedural1.png}
+%\caption{چارچوب کلی شیوه‌ی پیشنهادی.}\label{fig:OneLR_oneHR}
+%\end{figure}
+
+%\begin{equation}
+%f(x)=\frac{a_0}{2}+\sum_{n=1}^\infty\left(a_n\cos nx+b_n\sin nx\right)
+%\end{equation}
+
+
+\color{textcolor}
+\begin{titlepage}
+\centering
+\distance{1}
+{\color{headcolor}
+\Huge \bfseries طراحی شی گرا با استفاده از \\ C++ \par
+}
+\vspace{1.3ex} \large
+برنامه نویسی پیشرفته\\[2ex]دانشگاه علم و صنعت ایران
+\distance{2}
+\end{titlepage}
+
+\begin{plainslide}[مروری بر شگردهای برنامه نویسی\LTRfootnote{ Programming Tecnhiques}]
+
+\begin{itemize}
+\item برنامه سازی بی ساختار\LTRfootnote{ Unstructured programming}
+\item برنامه سازی روندگرا\LTRfootnote{ procedural programming}
+\item برنامه سازی بسته ای\LTRfootnote{ modular programming}
+\item برنامه سازی شی گرا\LTRfootnote{ object-oriented programming}
+\end{itemize}
+
+\end{plainslide}
+
+\begin{plainslide}[ مسیر چینی ساختار تهی]
+لاک پشت عزیز، 3 قدم به جلو برو، بعد یک قدم به سمت را  بپیچ، بعد ببین آیا  پایت به چیزی میخورد؟ اگر خورد ببین آیا آن چیز پله است در غیر اینصورت 5 قدم به سمت جلو برو و بعد ببین آیا پایت به چیزی میخورد؟ اگر خورد ببین آیا آن چیز پله است. ......
+\end{plainslide}
+
+\begin{plainslide}[ مسیر چینی ساختار تهی]
+\underline{لاک پشت عزیز}، 3 قدم به جلو برو، بعد یک قدم \underline{به سمت را  بپیچ}، بعد ببین 
+
+\underline{آیا  پایت به چیزی میخورد}؟ اگر خورد ببین \underline{آیا آن چیز پله است} در غیر اینصورت 5 قدم به سمت جلو برو و بعد ببین \underline{آیا پایت به چیزی میخورد}؟ اگر خورد ببین \underline{آیا آن چیز پله است.} ......
+\end{plainslide}
+
+\begin{plainslide}[ مسیر چینی ساختار تهی]
+\begin{itemize}
+\item برنامه اصلی به صورت مستقیم بر داده های عمومی اثرگذاری میکردند.
+\item برنامه ها بسیار بلند میشدند.
+\end{itemize}
+\end{plainslide}
+
+\pagecolor{backgroundcolor1}
+
+\begin{plainslide}[فرآیندگرایان ...]
+\begin{itemize}
+\item پایت به چیزی خورده است: دیگر نمیتوانی قدم برداری
+\item آیا پله است: اگر سنگی بود و ارتفاع آن حدودا 30 سانت بود و ...
+\item بررسی کردن رسیدن به پله: آن قدر به جلو برو تا پایت به چیزی بخورد، ببین آیا آن چیز پله است؟
+\item 5 قدم به جلو برو، بررسی کن آیا به پله رسیدی؟ به سمت راست بپیچ، بررسی کن آیا به پله رسیدی ....
+\end{itemize}
+\end{plainslide}
+
+\begin{plainslide}[فرآیندگرایان ...]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=20mm]{Images/procedural.PNG}
+\caption{فرآیند اجرای برنامه}\label{fig:1}
+\end{figure}
+\begin{itemize}
+\item واحدهای معنادار فرآیندی
+\item خوانایی
+\item فراخوانی سلسله مراتبی
+\end{itemize}
+\end{plainslide}
+
+\begin{plainslide}[فرآیندگرایان ...]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=45mm]{Images/procedural1.png}
+\caption{ساختار سلسله مراتبی}\label{fig:2}
+\end{figure}
+\end{plainslide}
+
+\pagecolor{backgroundcolor2}
+
+\begin{plainslide}[بسته های رفتاری ...]
+\begin{itemize}
+\item بسته رفتارهای ورزشی لاکپشت
+\begin{itemize}
+\item بدو
+\item پروانه بزن
+\item  پشتک وارون بزن
+\end{itemize}
+\item  بسته رفتارهای دانشجویی
+\begin{itemize}
+\item باز هم بدو
+\item خر بزن
+\item  درس پاس کن
+\end{itemize}
+\end{itemize}
+\end{plainslide}
+
+\begin{plainslide}[بسته های رفتاری ...]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=60mm]{Images/modular.png}
+\caption{ساختار بسته ها و داده هایشان}\label{fig:2}
+\end{figure}
+\end{plainslide}
+
+
+\begin{plainslide}[استفاده از ساختمان داده ها]
+\begin{itemize}
+\item لیست ها
+\item دیکشنری ها و ...
+\end{itemize}
+مجموع نمرات یک دانش آموز، تمامی مشخصات یک آدم در یک دیکشنری و ....
+\end{plainslide}
+
+\pagecolor{backgroundcolor3}
+
+\begin{plainslide}[تا اینجا چه داریم؟]
+\begin{itemize}
+\item بسته بندی داده ها در ساختمان داده ها
+\item تعریف رفتارها در بسته های جدا
+\end{itemize}
+\end{plainslide}
+
+\begin{plainslide}[دنبال چه چیزی بودیم؟]
+\begin{itemize}
+\item طراحی یک مفهوم خارجی
+\item شبیه سازی یک اتفاق در دنیای خارج
+\item انجام مجموعه ای از اعمال در دنیای مجازی دیجیتال متناسب با نیاز تعریف شده
+\end{itemize}
+
+بهترین روشی که میتوانیم یک مساله بیرونی را بفهمیم و برای پاسخ آن الگوریتمی پیشنهاد دهیم چیست؟
+\end{plainslide}
+
+\pagecolor{backgroundcolor4}
+\begin{plainslide}[توصیف شی گرا]
+\begin{enumerate}
+\item هر چیزی شی است
+\item یک برنامه عبارتست از مجموعه ای از اشیاء که با پیغام با همدیگر صحبت میکنند
+\item حافظه هر شی تشکیل شده است از اشیاء دیگری که در آن هستند.
+\item هر شی از یک نوع است
+\item همه اشیاء از یک نوع مشترک پیغام های مشترک دریافت میکنند
+\end{enumerate}
+\end{plainslide}
+
+\begin{plainslide}[عالم مُثُل!!!!]
+\begin{itemize}
+\item هر شی یک وجه مُثُلی دارد
+\item نوع: مجموعه ای از مشخصات و رفتارهای مشترک بین اشیاء
+\end{itemize}
+\begin{figure}[h]
+\centering 
+\includegraphics[width=60mm]{Images/light.png}
+\caption{لامپ}\label{fig:2}
+\end{figure}
+\end{plainslide}
+
+\pagecolor{backgroundcolor3}
+\begin{plainslide}[واما لامپ]
+\lr{
+\\
+Light myRoom1Light;\\
+myRoom1Light.on();\\
+\\
+Light myKitchenLight;\\
+myKitchenLight.off();\\
+}
+\end{plainslide}
+
+\begin{plainslide}[دانشجو، استاد در سمینار]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=90mm]{Images/classDiagramInheritance.jpg}
+\end{figure}
+\end{plainslide}
+
+\pagecolor{backgroundcolor}
+
+\begin{plainslide}[پیاده سازی مخفی]
+\begin{itemize}
+\item افراد در قبال یک کلاس: سازنده، استفاده کننده
+\item \lr{public,private,protected}
+\end{itemize}
+\end{plainslide}
+
+\begin{plainslide}[قابلیت استفاده مجدد]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=90mm]{Images/generic_car_cutaway_drivetrain.jpeg}
+\end{figure}
+\end{plainslide}
+
+\begin{plainslide}[قابلیت استفاده مجدد]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=90mm]{Images/has.png}
+\caption{این از آن دارد}
+\end{figure}
+\end{plainslide}
+
+\pagecolor{backgroundcolor1}
+\begin{plainslide}[قابلیت استفاده مجدد]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=30mm]{Images/car-big.jpg} \\
+\includegraphics[width=50mm]{Images/Cars_full.JPG}
+\end{figure}
+\end{plainslide}
+
+\begin{plainslide}[قابلیت استفاده مجدد]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=60mm]{Images/derived.png} 
+\caption{این از نوع آن است}
+\end{figure}
+\end{plainslide}
+
+\pagecolor{backgroundcolor2}
+\begin{plainslide}[قابلیت استفاده مجدد]
+\begin{figure}[h]
+\centering 
+\includegraphics[width=70mm]{Images/interface.png} 
+\caption{این مانند آن است}
+\end{figure}
+\end{plainslide}
+
+\pagecolor{backgroundcolor3}
+\begin{plainslide}[تکلیف]
+\begin{enumerate}
+\item \ltr{UML Class Diagrams}
+\item \rtl{طراحی اشیاء سیستم آموزشی یک مدرسه راهنمایی و آپلود عکس آن در سایت}
+\end{enumerate}
+\end{plainslide}
+
+\pagecolor{backgroundcolor4}
+\begin{plainslide}[\LaTeX]
+این ارائه با استفاده از زی پرشین که یکی از افراد خانواده \TeX میباشد آماده شده است.
+\end{plainslide}
+
+\end{document}
